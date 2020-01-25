@@ -1,0 +1,26 @@
+(.devops) Jays-MacBook-Pro-2:project-ml-microservice-kubernetes jaymojnidar$ ./run_kubernetes.sh 
+image = arungupta6467/udaproj4
+deployment.apps/proj4 created
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+proj4   0/1     1            0           0s
+error: unable to forward port because pod is not running. Current status=Pending
+(.devops) Jays-MacBook-Pro-2:project-ml-microservice-kubernetes jaymojnidar$ kubectl get pod
+NAME                     READY   STATUS    RESTARTS   AGE
+proj4-86f48ffcbf-7vfvw   1/1     Running   0          114s
+(.devops) Jays-MacBook-Pro-2:project-ml-microservice-kubernetes jaymojnidar$ ./run_kubernetes.sh 
+image = arungupta6467/udaproj4
+Error from server (AlreadyExists): deployments.apps "proj4" already exists
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+proj4   1/1     1            1           2m6s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+
+Jays-MacBook-Pro-2:project-ml-microservice-kubernetes jaymojnidar$ ./make_prediction_8000.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
